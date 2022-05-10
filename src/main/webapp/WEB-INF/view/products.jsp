@@ -8,6 +8,7 @@
 <title>Danh Sách Sản Phẩm</title>
 </head>
 <body>
+ <%@ include file="navbar.jsp"%> 
 	<c:forEach var="tempProduct" items="${products}">
 		<c:url var="updateLink" value="/customer/showFormForUpdate">
 			<c:param name="customerid" value="${tempProduct.id}"/>
