@@ -29,10 +29,9 @@
                 <li><a href=" <c:url value="/aboutus" />">About Us</a></li>
 
                 <!-- Only admin can view this link -->
-                <security:authorize access="hasRole('ROLE_ADMIN')">
-                    <li><a href=" <c:url value="/admin/product/addProduct" />">Add
-                        Product</a></li>
-                </security:authorize>
+                <%-- <security:authorize access="hasRole('ROLE_ADMIN')"> --%>
+                    <li><a href=" <c:url value="/admin/product/addProduct" />">Add Product</a></li>
+                <%-- </security:authorize> --%>
             </ul>
 
            <%--  <ul class="nav navbar-nav navbar-right">

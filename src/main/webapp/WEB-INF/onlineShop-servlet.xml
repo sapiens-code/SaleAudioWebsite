@@ -11,7 +11,6 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<mvc:annotation-driven></mvc:annotation-driven>
-
 	<context:component-scan base-package="com.se.spring"></context:component-scan>
 
 	<!-- Using this it get the actual view name by converting logical view name -->

@@ -1,40 +1,45 @@
 package com.se.spring.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name="product")
-public class Product {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
-	
-	@Column(name="name")
-	private String name;
-	
-	@Column(name="price")
-	private double price;
-	
-	@Column(name="description")
-	private String description;
-	
-	@Column(name="imagePath")
-	private String imagePath;
+@Table(name = "product")
+public class Product implements Serializable {
 
-	public Product(int id, String name, double price, String description, String imagePath) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.description = description;
-		this.imagePath = imagePath;
-	}
+	private static final long serialVersionUID = 5186013952828648626L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int id;
+
+	@Column(name = "category")
+	private String productCategory;
+
+	@Column(name = "description")
+	private String productDescription;
+
+	@NotEmpty(message = "Product Name is mandatory")
+	@Column(name = "name")
+	private String productName;
+
+	@NotNull(message = "Please provide some price")
+	@Column(name = "price")
+	private double productPrice;
+
+	@Transient
+	private MultipartFile productImage;
 
 	public int getId() {
 		return id;
@@ -44,39 +49,44 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getProductCategory() {
+		return productCategory;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProductCategory(String productCategory) {
+		this.productCategory = productCategory;
 	}
 
-	public double getPrice() {
-		return price;
+	public String getProductDescription() {
+		return productDescription;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getImagePath() {
-		return imagePath;
+	public double getProductPrice() {
+		return productPrice;
 	}
 
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
 	}
 
-	
-	
-	
+
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
 }

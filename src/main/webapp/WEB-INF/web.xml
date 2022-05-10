@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-	<display-name>OnlineShop WebSite</display-name>
+	<display-name>Sale Audio WebSite</display-name>
 
 	<!-- to connect the dispatcher servlet and applicationContext -->
 	<context-param>
