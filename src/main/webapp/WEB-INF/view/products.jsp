@@ -9,6 +9,7 @@
 </head>
 <body>
  <%@ include file="navbar.jsp"%> 
+ <%@ include file="slider.jsp"%> 
 	<c:forEach var="tempProduct" items="${products}">
 		<c:url var="updateLink" value="/customer/showFormForUpdate">
 			<c:param name="customerid" value="${tempProduct.id}"/>
@@ -26,5 +27,6 @@
 			</td>
 		</tr>
 	</c:forEach>
+	 <%@ include file="footer.jsp"%> 
 </body>
 </html>

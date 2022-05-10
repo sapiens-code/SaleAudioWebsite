@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.se.spring.entity.Product;
 
@@ -17,15 +18,20 @@ import service.ProductServiceImpl;
 @RequestMapping("/product")
 public class ProductController {
 
-
 	private ProductService productService = new ProductServiceImpl();
-	
-	@GetMapping ("/list")
-	public String showHome(Model theModel)
-	{
+
+	@GetMapping("/list")
+	public String showHome(Model theModel) {
 		List<Product> products = productService.getProducts();
-		theModel.addAttribute("products",products);
+		theModel.addAttribute("products", products);
 		return "products";
 	}
-	
+
+	@RequestMapping("/getAllProducts")
+	public String getAllProducts(Model theModel) {
+		List<Product> products = productService.getProducts();
+		theModel.addAttribute("products", products);
+		return "products";
+	}
+
 }
