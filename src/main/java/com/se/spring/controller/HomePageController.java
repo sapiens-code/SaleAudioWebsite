@@ -12,7 +12,7 @@ public class HomePageController {
 
 	@GetMapping("/index")
 	public String sayIndex() {
-		return "index";
+		return "../../index";
 	}
 
 	@RequestMapping("/login")
