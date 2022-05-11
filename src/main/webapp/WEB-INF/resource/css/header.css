@@ -22,8 +22,8 @@ body{
 	margin-top:8px;
 }
 
-/* Slider */
-.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+Slider
+.carousel-inner>.item>img{
 	line-height: 1;
 	height: 292px;
 	width: 1353px;

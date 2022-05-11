@@ -47,10 +47,6 @@ public class ApplicationConfig {
 	}
 
 	private final Properties hibernateProperties() {
-//		Properties hibernateProperties = new Properties();
-//		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
-//		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-//		return hibernateProperties;
 		Properties props = new Properties();
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServer2012Dialect");
 		props.setProperty("hibernate", "true");

@@ -52,12 +52,10 @@ public class ProductController {
 		return "redirect:/getAllProducts";
 	}
 	
-	
-	@GetMapping("/list")
-	public String showHome(Model theModel) {
-		List<Product> products = productService.getAllProducts();
-		theModel.addAttribute("products", products);
-		return "products";
+	@RequestMapping(value = "/getProductById/{productId}", method = RequestMethod.GET)
+	public ModelAndView getProductById(@PathVariable(value = "productId") int productId) {
+		Product product = productService.getProductById(productId);
+		return new ModelAndView("productPage", "product", product);
 	}
 
 	@RequestMapping(value = "/getAllProducts", method = RequestMethod.GET)
@@ -80,8 +78,7 @@ public class ProductController {
 		productService.addProduct(product);
 		MultipartFile image = product.getProductImage();
 		if (image != null && !image.isEmpty()) {
-			//String folPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
-			//Path path = Paths.get("C:\\Users\\Sulong\\Documents\\Intern\\project_laioffer\\products\\" + product.getId() + ".jpg");
+
 			Path path = Paths.get("F:\\SourceCode\\Project Java\\SaleAudioWebsite\\src\\main\\webapp\\WEB-INF\\resource\\images\\products", product.getId() + ".jpg");
 
 			try {
@@ -90,6 +87,25 @@ public class ProductController {
 				e.printStackTrace();
 			}
 		}
+		return "redirect:/getAllProducts";
+	}
+	
+	@RequestMapping(value = "/admin/product/editProduct/{productId}")
+	public ModelAndView getEditForm(@PathVariable(value = "productId") int productId) {
+		Product product = productService.getProductById(productId);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("editProduct");
+		modelAndView.addObject("editProductObj", product);
+		modelAndView.addObject("productId", productId);
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/admin/product/editProduct/{productId}", method = RequestMethod.POST)
+	public String editProduct(@ModelAttribute(value = "editProductObj") Product product,
+			@PathVariable(value = "productId") int productId) {
+		product.setId(productId);
+		productService.updateProduct(product);
 		return "redirect:/getAllProducts";
 	}
 
