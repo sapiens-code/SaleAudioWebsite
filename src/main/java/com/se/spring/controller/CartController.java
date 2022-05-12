@@ -29,9 +29,12 @@ public class CartController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		Customer customer = customerService.getCustomerByUserName(username);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView .setViewName("cart");
+		modelAndView.addObject("cartItems", customer.getCart().getCartItem());
+		modelAndView.addObject("cartId", customer.getCart().getId());
 
-		return new ModelAndView("cart", "cartItems", customer.getCart().getCartItem());
-
+		return modelAndView;
 	}
 
 	@GetMapping("/cart/getCart/{cartId}")

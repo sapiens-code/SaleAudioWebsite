@@ -25,7 +25,7 @@
         <div>
             <br>Products Purchased
             <div>
-                <c:url value="/order/${cart.id}" var="url1"></c:url>
+                <c:url value="/order/${cartId}" var="url1"></c:url>
                 <a href="${url1}" class="btn btn-primary pull-left"
                    style="margin-top: 15px; margin-left: 5px"> <span
                         class="glyphicon glyphicon-shipping-cart"> </span>Check Out

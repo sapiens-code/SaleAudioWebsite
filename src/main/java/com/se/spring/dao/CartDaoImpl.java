@@ -10,8 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.se.spring.entity.Cart;
 import com.se.spring.entity.CartItem;
 
-
-
 @Repository
 public class CartDaoImpl implements CartDao {
 

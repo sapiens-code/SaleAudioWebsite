@@ -31,27 +31,27 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<img src="<c:url value="/resource/images/loa1.jpg"/>" alt="Image1"
-							width="460" height="345">
+							width="1000" height="345">
 					</div>
 
 					<div class="item">
 						<img src="<c:url value="/resource/images/loa2.jpg"/>"
-							alt="Image2" width="460" height="345">
+							alt="Image2" width="1000" height="345">
 					</div>
 
 					<div class="item">
 						<img src="<c:url value="/resource/images/loa3.jpg"/>"
-							alt="Image3" width="460" height="345">
+							alt="Image3" width="1000" height="345">
 					</div>
 
 					<div class="item">
 						<img src="<c:url value="/resource/images/loa4.jpg"/>"
-							alt="Image4" width="460" height="345">
+							alt="Image4" width="1000" height="345">
 					</div>
 
 					<div class="item">
 						<img src="<c:url value="/resource/images/loa5.jpg"/>"
-							alt="Image5" width="460" height="345">
+							alt="Image5" width="1000" height="345">
 					</div>
 				</div>
 

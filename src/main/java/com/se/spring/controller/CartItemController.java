@@ -72,10 +72,4 @@ public class CartItemController {
    	 return "redirect:/cart/getCartById";
     }
 
-    @RequestMapping("/cart/removeAllItems/{cartId}")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void removeAllCartItems(@PathVariable(value = "cartId") int cartId) {
-   	 Cart cart = cartService.getCartById(cartId);
-   	 cartItemService.removeAllCartItems(cart);
-    }
 }

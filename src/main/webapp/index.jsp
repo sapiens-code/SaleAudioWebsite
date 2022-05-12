@@ -11,6 +11,7 @@
 <body>
  <%@ include file="WEB-INF/view/navbar.jsp"%> 
  <%@ include file="WEB-INF/view/slider.jsp"%>
+ <%@ include file="WEB-INF/view/productGrid.jsp"%>
  <%@ include file="WEB-INF/view/footer.jsp"%> 
 </body>
 </html>
